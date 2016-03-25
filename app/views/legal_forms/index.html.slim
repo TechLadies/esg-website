@@ -1,0 +1,30 @@
+h3 Legal Release Form for Presenters
+
+table
+
+  tbody
+    - @legal_forms.each do |legal_form|
+      tr
+        td = legal_form.event
+        td = legal_form.group
+        td = legal_form.date
+        td = legal_form.presenter
+        td = legal_form.twitter
+        td = legal_form.title
+        td = legal_form.description
+        td = legal_form.slides
+        td = legal_form.fileformat
+        td = legal_form.livedemo
+        td = legal_form.audio
+        td = legal_form.sharedlaptop
+        td = legal_form.OS
+        td = legal_form.videooutput
+        td = legal_form.creativecommons
+        td = legal_form.email
+        td = link_to 'Show', legal_form
+        td = link_to 'Edit', edit_legal_form_path(legal_form)
+        td = link_to 'Destroy', legal_form, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Legal Form', new_legal_form_path
