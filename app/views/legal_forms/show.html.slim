@@ -1,0 +1,54 @@
+p#notice = notice
+
+p
+  strong Event:
+  = @legal_form.event
+p
+  strong Group:
+  = @legal_form.group
+p
+  strong Date:
+  = @legal_form.date
+p
+  strong Presenter:
+  = @legal_form.presenter
+p
+  strong Twitter:
+  = @legal_form.twitter
+p
+  strong Title:
+  = @legal_form.title
+p
+  strong Description:
+  = @legal_form.description
+p
+  strong Slides:
+  = @legal_form.slides
+p
+  strong Fileformat:
+  = @legal_form.fileformat
+p
+  strong Livedemo:
+  = @legal_form.livedemo
+p
+  strong Audio:
+  = @legal_form.audio
+p
+  strong Sharedlaptop:
+  = @legal_form.sharedlaptop
+p
+  strong Os:
+  = @legal_form.OS
+p
+  strong Videooutput:
+  = @legal_form.videooutput
+p
+  strong Creativecommons:
+  = @legal_form.creativecommons
+p
+  strong Email:
+  = @legal_form.email
+
+= link_to 'Edit', edit_legal_form_path(@legal_form)
+'|
+= link_to 'Back', legal_forms_path
