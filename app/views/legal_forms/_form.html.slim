@@ -1,0 +1,57 @@
+= form_for @legal_form do |f|
+  - if @legal_form.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@legal_form.errors.count, "error")} prohibited this legal_form from being saved:"
+      ul
+        - @legal_form.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :event
+    = f.text_field :event
+  .field
+    = f.label :group
+    = f.text_field :group
+  .field
+    = f.label :date
+    = f.text_field :date, :class => 'datepicker'
+  .field
+    = f.label :presenter
+    = f.text_field :presenter
+  .field
+    = f.label :twitter
+    = f.text_field :twitter
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :slides
+    = f.check_box :slides
+  .field
+    = f.label :fileformat
+    = f.number_field :fileformat
+  .field
+    = f.label :livedemo
+    = f.check_box :livedemo
+  .field
+    = f.label :audio
+    = f.check_box :audio
+  .field
+    = f.label :sharedlaptop
+    = f.check_box :sharedlaptop
+  .field
+    = f.label :OS
+    = f.number_field :OS
+  .field
+    = f.label :videooutput
+    = f.number_field :videooutput
+  .field
+    = f.label :creativecommons
+    = f.check_box :creativecommons
+  .field
+    = f.label :email
+    = f.text_field :email
+  .actions = f.submit
