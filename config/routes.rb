@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :legal_forms
+
   devise_config = ActiveAdmin::Devise.config
   devise_config[:controllers][:omniauth_callbacks] = 'users/omniauth_callbacks'
   devise_for :users, devise_config
