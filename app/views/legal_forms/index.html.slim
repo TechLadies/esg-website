@@ -1,51 +1,36 @@
-h2 Presenter Legal Release Form
+.legalformindex
 
-table
-  thead
-    tr
-      th Event
-      th Group
-      th Date
-      th Presenter
-      th Twitter
-      th Title
-      th Description
-      th Slides
-      th Fileformat
-      th Livedemo
-      th Audio
-      th Sharedlaptop
-      th Os
-      th Videooutput
-      th Creativecommons
-      th Email
-      th
-      th
-      th
+  h2 Engineers.SG Presenter's Info Form
 
-  tbody
-    - @legal_forms.each do |legal_form|
-      tr
-        td = legal_form.event
-        td = legal_form.group
-        td = legal_form.date
-        td = legal_form.presenter
-        td = legal_form.twitter
-        td = legal_form.title
-        td = legal_form.description
-        td = legal_form.slides
-        td = legal_form.fileformat
-        td = legal_form.livedemo
-        td = legal_form.audio
-        td = legal_form.sharedlaptop
-        td = legal_form.OS
-        td = legal_form.videooutput
-        td = legal_form.creativecommons
-        td = legal_form.email
-        td = link_to 'Show', legal_form
-        td = link_to 'Edit', edit_legal_form_path(legal_form)
-        td = link_to 'Destroy', legal_form, data: {:confirm => 'Are you sure?'}, :method => :delete
+  table
 
-br
+    tbody
+      br = "Thank you for contributing to the Singapore tech scene. Please fill up the form below so that we can optimise the presentation setup at the event where you will be presenting."
 
-= link_to 'New Legal form', new_legal_form_path
+      - @legal_forms.each do |legal_form|
+        tr
+          td = legal_form.event
+          td = legal_form.group
+          td = legal_form.date
+          td = legal_form.presenter
+          td = legal_form.twitter
+          td = legal_form.title
+          td = legal_form.description
+          td = legal_form.slides
+          td = legal_form.fileformat
+          td = legal_form.livedemo
+          td = legal_form.audio
+          td = legal_form.sharedlaptop
+          td = legal_form.OS
+          td = legal_form.videooutput
+          td = legal_form.creativecommons
+          td = legal_form.email
+          td = link_to 'Show', legal_form
+          td = link_to 'Edit', edit_legal_form_path(legal_form)
+          td = link_to 'Destroy', legal_form, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+  br
+
+  = link_to 'New Legal form', new_legal_form_path
+
+  p
