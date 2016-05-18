@@ -1,0 +1,170 @@
+= form_for @legal_form do |f|
+  - if @legal_form.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@legal_form.errors.count, "error")} prohibited this legal_form from being saved:"
+      ul
+        - @legal_form.errors.full_messages.each do |message|
+          li = message
+  p        
+  .field
+    = f.label :event, "Event"
+    = f.text_field :event
+  p
+  .field
+    = f.label :group, "Group"
+    = f.text_field :group
+  p
+  .field
+    = f.label :date, "Date"
+    = f.date_field :date
+  
+  p
+  .sub-header 
+    h5 = "About the presenter"
+
+  p
+  .field
+    = f.label :presenter, "Your Name"
+    = f.text_field :presenter
+  p
+  .field
+    = f.label :twitter, "Twitter (if any)"
+    = f.text_field :twitter
+
+  p
+  .sub-header 
+    h5 = "About the presentation"
+
+  p
+  .field
+    = f.label :title, "Title of your presentation"
+    = f.text_field :title
+  p
+  .field
+    = f.label :description, "Brief description" 
+    = f.text_area :description
+
+  p
+  .sub-header 
+    h5 = "Presentation format"
+  
+  p
+  .field
+    = f.label :slides, "Do you have presentation slides?"
+    p
+    = radio_button_tag(:slides, "1")
+    = label_tag(:slides_1, "Yes")
+    p
+    = radio_button_tag(:slides, "0")
+    = label_tag(:slides_0, "No")
+  
+  p  
+  .field
+    = f.label :fileformat, "What is the file format of your presentation slides?"
+    p
+    = radio_button_tag(:fileformat, "1")
+    = label_tag(:fileformat_1, "Microsoft PowerPoint")
+    p
+    = radio_button_tag(:fileformat, "2")
+    = label_tag(:fileformat_2, "Apple Keynote")
+    p
+    = radio_button_tag(:fileformat, "3")
+    = label_tag(:fileformat_3, "Google Slides")
+    p
+    = radio_button_tag(:fileformat, "4")
+    = label_tag(:fileformat_4, "PDF")
+    p
+    = radio_button_tag(:fileformat, "5")
+    = label_tag(:fileformat_5, "Other")
+
+  p
+  .field
+    = f.label :livedemo, "Do you need to do any live demo on your laptop? (eg. live coding, visit external websites, videos)"
+    p
+    = radio_button_tag(:livedemo, "1")
+    = label_tag(:livedemo_1, "Yes")
+    p
+    = radio_button_tag(:livedemo, "0")
+    = label_tag(:livedemo_0, "No")
+
+  p
+  .field
+    = f.label :audio, "Does your presentation require audio output?"
+    p
+    = radio_button_tag(:audio, "1")
+    = label_tag(:audio_1, "Yes")
+    p
+    = radio_button_tag(:audio, "0")
+    = label_tag(:audio_0, "No")
+
+
+  p
+  .field
+    = f.label :sharedlaptop, "Are you okay with using a shared laptop for your presentation?"
+    p
+    = radio_button_tag(:sharedlaptop, "1")
+    = label_tag(:sharedlaptop_1, "Yes")
+    p
+    = radio_button_tag(:sharedlaptop, "0")
+    = label_tag(:sharedlaptop_0, "No")
+
+  p
+  .sub-header 
+  h5 = "About your computer" 
+  p = "Only fill this up if you are presenting with your laptop"
+
+  p
+  .field
+    = f.label :OS, "What is your laptop's operating system?"
+    p
+    = radio_button_tag(:OS, "1")
+    = label_tag(:OS_1, "OSX")
+    p
+    = radio_button_tag(:OS, "2")
+    = label_tag(:OS_2, "Windows")
+    p
+    = radio_button_tag(:OS, "3")
+    = label_tag(:OS_3, "Some Linux distro")
+    p
+    = radio_button_tag(:OS, "4")
+    = label_tag(:OS_4, "Other")
+
+  p
+  .field
+    = f.label :videooutput, "What video output does your laptop have?"
+    p
+    = radio_button_tag(:fileformat, "1")
+    = label_tag(:fileformat_1, "HDMI (We prefer this)")
+    p
+    = radio_button_tag(:fileformat, "2")
+    = label_tag(:fileformat_2, "Mini-Display Port")
+    p
+    = radio_button_tag(:fileformat, "3")
+    = label_tag(:fileformat_3, "Display Port")
+    p
+    = radio_button_tag(:fileformat, "4")
+    = label_tag(:fileformat_4, "Mini/Micro HDMI")
+    p
+    = radio_button_tag(:fileformat, "5")
+    = label_tag(:fileformat_5, "VGA")
+    p
+    = radio_button_tag(:fileformat, "5")
+    = label_tag(:fileformat_5, "Other")
+
+  p
+  .field
+    = f.label :creativecommons, "Your presentation might be recorded. If so, the video will be published on Engineers.SG (via our YouTube Channel) and licensed under Creative Commons (CC-BY)."
+    p
+    = radio_button_tag(:creativecommons, "1")
+    = label_tag(:creativecommons_1, "Yes, do publish it")
+    p
+    = radio_button_tag(:creativecommons, "0")
+    = label_tag(:creativecommons_0, "Hang on, I would like more details about this")
+
+  p
+  .field
+    = f.label :email, "Your email (in case we have follow up questions)"
+    = f.text_field :email
+
+  p
+  .actions = f.submit

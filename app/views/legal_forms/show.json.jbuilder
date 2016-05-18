@@ -1,0 +1,1 @@
+json.extract! @legal_form, :id, :event, :group, :date, :presenter, :twitter, :title, :description, :slides, :fileformat, :livedemo, :audio, :sharedlaptop, :OS, :videooutput, :creativecommons, :email, :created_at, :updated_at
